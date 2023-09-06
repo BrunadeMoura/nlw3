@@ -23,9 +23,13 @@ $ cd nlw3
 
 # Instale as dependências
 $ npm install express
+$ npm install sqlite3
 
 # Execute a aplicação
 $ npm start
+
+# Se tiver problemas ao executar a aplicação, digite o seguinte comando:
+$ npm audit fix
 
 # O servidor inciará na porta:5550 - acesse <http://localhost:5550>
 ```
