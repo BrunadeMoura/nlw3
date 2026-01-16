@@ -1,7 +1,11 @@
-//import dependencies
-const express = require('express');
-const path = require('path');
-const pages = require('./pages.js');
+import express from 'express';
+import path from 'path';
+import pages from './pages.js';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 //initiating express
 const server = express();
 
@@ -10,7 +14,7 @@ server
     .use(express.urlencoded({ extended:true}))
     //using static files (utilizando os arquivos estáticos)
     .use(express.static('public'))
-    //to set up (configurar) template engine
+    // Configure a template engine
     .set('views', path.join(__dirname, "views"))
     .set('view engine', 'hbs')
 

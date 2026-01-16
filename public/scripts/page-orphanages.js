@@ -1,5 +1,3 @@
-//const { orphanage } = require("../src/pages");
-
 //create map
 const map = L.map('mapid').setView([-27.2169063,-49.6438079], 15);
 

@@ -1,5 +1,5 @@
-const Database = require ('./db.js');
-const saveOrphanage = require ('./saveOrphanage.js');
+import Database from './db.js';
+import saveOrphanage from './saveOrphanage.js';
 
 Database.then(async db => {
     //insert data into table
