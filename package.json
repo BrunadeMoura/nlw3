@@ -14,10 +14,10 @@
   "author": "Bruna Moura",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1",
-    "hbs": "^4.1.1",
-    "sqlite-async": "^1.1.1",
-    "sqlite3": "^5.1.6"
+    "express": "^5.2.1",
+    "hbs": "^4.2.0",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "nodemon": "^3.1.11"
