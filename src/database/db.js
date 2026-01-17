@@ -1,7 +1,12 @@
-import * as Database from 'sqlite-async';
+import sqlite3 from 'sqlite3';
+import { open } from 'sqlite';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const dbPath = path.join(__dirname, 'database.sqlite');
 
 function execute(db) {
     return db.exec(`
@@ -17,7 +22,7 @@ function execute(db) {
             opening_hours TEXT,
             open_on_weekends TEXT
         );
-    `)
+    `).then(() => db);
 }
 
-export default Database.Database.open(path.join(__dirname, 'database.sqlite')).then(execute); //db
+export default open({ filename: dbPath, driver: sqlite3.Database }).then(execute);
